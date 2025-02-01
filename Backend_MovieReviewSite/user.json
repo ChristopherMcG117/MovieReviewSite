@@ -1,0 +1,1 @@
+[{"_id": {"$oid": "65773a331da05f215ddf3466"}, "name": "james", "username": "JJ", "email": "JJtest@gmail.com", "password": {"$binary": {"base64": "JDJiJDEyJG8xZWZyU3NnN1Y1VkJ3cjJLc1VVbC5jMHhyMktvNzExOVdKdDJ4VW9NOVovdnpjTFNnaTY2", "subType": "00"}}, "admin": "True"}]

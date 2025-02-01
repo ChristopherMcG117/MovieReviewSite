@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Movie Company{% endblock %}
+
+{% block content %}
+<header
+  class="masthead"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Movie Company</h1>
+          <span class="subheading">Collection:</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+      <hr class="my-4" />
+      <h1>Movies</h1>
+      <hr class="my-4" />
+      <!-- movie preview-->
+      {% for movie in movies %}
+      <div class="item-preview">
+        <a href="{{ url_for('show_item', id=movie._id) }}">
+          <h2 class="item-componentName">{{ movie.movieTitle }}</h2>
+        </a>
+        <p class="item-meta">
+          Release Date:
+          {{movie.year}}
+          <a href="{{url_for('delete_movie', id=movie._id) }}">✘</a>
+        </p>
+      </div>
+      <!-- Divider-->
+      <hr class="my-4" />
+      {% endfor %}
+
+      <!-- New item -->
+      <div class="d-flex justify-content-end mb-4">
+        <a
+          class="btn btn-primary float-right"
+          href="{{url_for('find_movie')}}"
+          >Add New Item</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+flask
+pymongo
+requests
+datetime
+bcrypt
+jwt
+flask_cors
+bson.ObjectId
