@@ -1,0 +1,44 @@
+<body>
+<div class="container">
+  <div class="d-flex flex-wrap mb-3">
+    <div *ngFor = "let movie of movie_list | async">
+    <div class="p-2 bd-highlight">
+      <div class="card text-black mb-3" style = "background-color: darkgrey width: 18rem; margin: auto">
+            <div class="card-header text-white" style="background-color: darkgrey">
+              {{ movie.movieTitle }}
+            </div>
+            <div class="card-body" style="background-color: darkgrey">
+              <div class="mb-3" style = "cursor: pointer">
+              <a [routerLink]="['/movies', movie._id]"><img src={{movie.img_url}} style = "width:260px;height:350px;" class="rounded mb-auto d-block"></a>
+              </div>
+            </div>
+            <div class="card-footer text-white" style="background-color: darkgrey">
+              Release Year: {{ movie.year }}
+            </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="previousPage()">Previous</button>
+    </div>
+    <div class="col-sm-6 text-end">
+      <button class="btn btn-primary" (click)="nextPage()">Next</button>
+    </div>
+ </div>
+
+</div> <!-- container -->
+
+    <!-- Footer-->
+        <footer class="border-top">
+          <div class="container px-4 px-lg-5">
+              <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-md-10 col-lg-8 col-xl-7">
+                      <div class="small text-center text-white fst-italic">Copyright &copy; MovieDB Company 2023</div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+</body>
